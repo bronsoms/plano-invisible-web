@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#1E1E1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Elegant puzzle piece -->
+  <path d="M55 45 L85 45
+           C85 45 83 32 90 26 C97 20 107 20 114 26 C121 32 119 45 119 45
+           L155 45 L155 80
+           C155 80 168 78 174 85 C180 92 180 102 174 109 C168 116 155 114 155 114
+           L155 150 L119 150
+           C119 150 121 163 114 169 C107 175 97 175 90 169 C83 163 85 150 85 150
+           L55 150 L55 114
+           C55 114 42 116 36 109 C30 102 30 92 36 85 C42 78 55 80 55 80 Z"/>
+  <!-- Subtle inner contour for depth -->
+  <path d="M62 52 L84 52 C82 40 84 30 90 26" opacity="0.2" stroke-width="1.5"/>
+  <path d="M148 52 L120 52 C122 40 120 30 114 26" opacity="0.2" stroke-width="1.5"/>
+  <path d="M148 143 L120 143 C122 155 120 165 114 169" opacity="0.2" stroke-width="1.5"/>
+  <path d="M62 143 L84 143 C82 155 84 165 90 169" opacity="0.2" stroke-width="1.5"/>
+</svg>
