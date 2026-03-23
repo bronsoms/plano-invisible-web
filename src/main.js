@@ -17,12 +17,24 @@
   window.addEventListener('scroll', handleNavScroll, { passive: true });
   handleNavScroll();
 
-  // ---- Close mobile nav on link click ----
+  // ---- Mobile slide menu ----
   var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
   var navCollapse = document.getElementById('navbarNav');
+
+  // Lock body scroll when menu open
+  if (navCollapse) {
+    navCollapse.addEventListener('show.bs.collapse', function () {
+      document.body.style.overflow = 'hidden';
+    });
+    navCollapse.addEventListener('hide.bs.collapse', function () {
+      document.body.style.overflow = '';
+    });
+  }
+
+  // Close mobile nav on link click
   navLinks.forEach(function (link) {
     link.addEventListener('click', function () {
-      if (navCollapse.classList.contains('show')) {
+      if (navCollapse && navCollapse.classList.contains('show')) {
         bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
       }
     });

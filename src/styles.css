@@ -596,7 +596,26 @@ section {
 
 @media (max-width: 768px) {
   .part-hero__title { font-size: 2.2rem; }
-  .part-hero__img { max-width: 300px; }
+  .part-hero__img { display: none; }
+  .part-hero .col-lg-6:first-child {
+    text-align: center;
+    width: 100%;
+  }
+  .part-hero__sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .part-hero__cta {
+    display: block;
+    margin: 0 auto;
+    max-width: 250px;
+  }
+  .part-plataforma .col-lg-5 img {
+    max-width: 40% !important;
+  }
+  #neurociencia .col-lg-6 img {
+    max-width: 50% !important;
+  }
 }
 
 /* ---- Profesionales Hero ---- */
@@ -655,7 +674,41 @@ section {
 
 @media (max-width: 768px) {
   .pro-hero__title { font-size: 2.2rem; }
-  .pro-hero__img { max-width: 300px; }
+  .pro-hero__img { display: none; }
+  .pro-hero .col-lg-6:first-child {
+    text-align: center;
+    width: 100%;
+  }
+  .pro-hero__sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pro-hero__cta {
+    display: block;
+    margin: 0 auto;
+    max-width: 250px;
+  }
+  .navbar--dark-hero .navbar-toggler-icon {
+    filter: invert(1);
+  }
+  footer .footer-main {
+    text-align: center;
+  }
+  footer .footer-main .col-lg-4,
+  footer .footer-main .col-lg-2,
+  footer .footer-main .col-lg-3 {
+    text-align: center;
+  }
+  footer .navbar-logo-text {
+    font-size: 2rem;
+  }
+  footer .footer-links {
+    padding-left: 0;
+  }
+  footer .footer-links li {
+    text-align: center;
+  }
+
 }
 
 /* ---- Particulares Divider & Plataforma ---- */
@@ -957,6 +1010,43 @@ section {
   margin-bottom: 0.5rem;
 }
 
+/* ---- Quote Separator ---- */
+.quote-text {
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #1d1d1b;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ---- Highlight Logo (in dark sections) ---- */
+.highlight-logo {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-left: 0.15em;
+}
+
+.highlight-logo:first-child {
+  margin-left: 0;
+}
+
+/* ---- Solution Lead (profesionales) ---- */
+.solution-lead {
+  max-width: 850px;
+  color: #ccc;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+/* ---- Stat Number Inline ---- */
+.stat-number-inline {
+  color: var(--accent);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
 /* ---- Testimonios ---- */
 .testimonial-card {
   background: transparent;
@@ -1191,6 +1281,85 @@ footer {
   .home-casa-img {
     max-width: 280px;
   }
+  .part-hero__img {
+    display: none;
+  }
+  .pro-hero__img {
+    display: none;
+  }
+  .part-hero .col-lg-6:first-child,
+  .pro-hero .col-lg-6:first-child {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* ---- Mobile Slide Menu ---- */
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: #fff;
+    z-index: 1070;
+    padding: 5rem 2rem 2rem;
+    transition: right 0.3s ease;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+    overflow-y: auto;
+  }
+  .navbar-collapse.show {
+    right: 0;
+  }
+  .navbar-collapse .navbar-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .navbar-collapse .nav-link {
+    font-size: 1.2rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    color: var(--dark) !important;
+  }
+  .navbar-collapse .nav-cta {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .navbar-toggler {
+    z-index: 1080;
+    position: relative;
+    margin-right: 0;
+  }
+  .nosotros-img {
+    max-width: 300px;
+  }
+  .diff-img {
+    display: none !important;
+  }
+  .bg-gray .col-lg-7 {
+    text-align: center;
+  }
+  .diff-list {
+    text-align: left;
+  }
+  .pillar-icon {
+    height: 130px;
+  }
+  .step-card__img {
+    max-width: 80%;
+  }
+  .part-plataforma .img-fluid {
+    max-width: 45% !important;
+  }
+  #neurociencia .img-fluid {
+    max-width: 50% !important;
+  }
+  .plano-invisible-highlight .img-fluid {
+    max-width: 40% !important;
+  }
+  .bg-gray .col-lg-4 .img-fluid {
+    max-width: 50% !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1230,5 +1399,107 @@ footer {
   }
   .nosotros-img {
     max-width: 280px;
+  }
+  .home-logo-text {
+    font-size: 3rem;
+  }
+  .home-subtitle {
+    white-space: normal;
+    text-align: center;
+  }
+  .home-splash {
+    align-items: flex-start;
+    padding-top: 15vh;
+  }
+  .navbar-logo-text {
+    font-size: 1.8rem;
+  }
+  .navbar-toggler {
+    margin-right: 0;
+  }
+  .plano-invisible-highlight__title {
+    font-size: 2rem;
+  }
+  .plano-invisible-highlight__lead {
+    font-size: 1.1rem;
+  }
+  .cta-banner__title {
+    font-size: 1.6rem;
+  }
+  .home-casa-img {
+    height: 40vh;
+  }
+  .pillar-icon {
+    height: 120px;
+  }
+  .quote-text {
+    font-size: 1.2rem;
+  }
+  .highlight-logo {
+    font-size: 1.6rem;
+  }
+  .solution-lead {
+    font-size: 1.2rem;
+  }
+  .stat-number-inline {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-logo-text {
+    font-size: 2.5rem;
+  }
+  .navbar-logo-text {
+    font-size: 1.5rem;
+  }
+  .home-claim {
+    font-size: 2rem;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .part-hero__title {
+    font-size: 1.8rem;
+  }
+  .pro-hero__title {
+    font-size: 1.8rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  .plano-invisible-highlight__title {
+    font-size: 1.5rem;
+  }
+  .plano-invisible-highlight__lead {
+    font-size: 1rem;
+  }
+  .cta-banner__title {
+    font-size: 1.3rem;
+  }
+  .home-casa-img {
+    height: 30vh;
+  }
+  .pillar-icon {
+    height: 100px;
+  }
+  .testimonial-card p {
+    font-size: 0.85rem;
+  }
+  .quote-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .highlight-logo {
+    font-size: 1.3rem;
+  }
+  .solution-lead {
+    font-size: 1rem;
+  }
+  .stat-number-inline {
+    font-size: 1.5rem;
   }
 }
