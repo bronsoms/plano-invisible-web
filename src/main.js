@@ -49,8 +49,8 @@
     }
   });
 
-  // ---- IntersectionObserver for fade-up animations ----
-  var fadeEls = document.querySelectorAll('.fade-up');
+  // ---- IntersectionObserver for scroll animations ----
+  var fadeEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .fade-in, .scale-in');
   if ('IntersectionObserver' in window) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
