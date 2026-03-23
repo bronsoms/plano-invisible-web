@@ -1,0 +1,24 @@
+{
+  "name": "plano-invisible-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bronsoms/plano-invisible-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bronsoms/plano-invisible-web/issues"
+  },
+  "homepage": "https://github.com/bronsoms/plano-invisible-web#readme",
+  "description": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  }
+}

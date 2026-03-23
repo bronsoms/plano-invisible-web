@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Planoinvisible - aquel previo a dibujar líneas en el que ahondamos en sus preferencias y necesidades">
+    <meta name="keywords" content="diseño, planoinvisible, arquitectura, diseño centrado en el usuario">
+    <meta name="author" content="Planoinvisible">
+    <meta property="og:title" content="Planoinvisible">
+    <meta property="og:description"
+        content="Es aquel previo a dibujar líneas en el que ahondamos en sus preferencias y necesidades">
+    <meta property="og:image" content="https://www.planoinvisible.com/images/logo.png">
+    <meta property="og:url" content="https://www.planoinvisible.com">
+    <meta property="og:type" content="website">
+    <title>Planoinvisible</title>
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin: 1rem 0;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .logo-container img {
+            max-height: 150px;
+            width: auto;
+            max-width: 45%;
+        }
+        
+        .iframe-container {
+            width: 100%;
+            height: calc(100vh - 220px); /* Altura total menos espacio para logo */
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <div class="logo-container">
+            <img src="logo-complet.avif" alt="Planoinvisible">
+        </div>
+        
+        <div class="iframe-container">
+            <iframe id="JotFormIFrame-251344685174057" 
+                title="Plano Invisible & Construmat 2025"
+                onload="window.parent.scrollTo(0,0)" 
+                allowtransparency="true"
+                allow="geolocation; microphone; camera; fullscreen; payment" 
+                src="https://form.jotform.com/251344685174057"
+                scrolling="no">
+            </iframe>
+            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+            <script>
+                window.jotformEmbedHandler("iframe[id='JotFormIFrame-251344685174057']", "https://form.jotform.com/");
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
