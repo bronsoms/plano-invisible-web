@@ -2,7 +2,7 @@
 node_modules/
 
 # Eleventy output
-_site/
+dist/
 
 # OS files
 .DS_Store
