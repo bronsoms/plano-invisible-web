@@ -35,6 +35,63 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Plano Invisible",
+    "url": "https://planoinvisible.com",
+    "logo": "https://planoinvisible.com/images/og-preview.jpg",
+    "description": "Plataforma digital que combina arquitectura, psicología y neurociencia para ahondar en los deseos y necesidades del hogar.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Barcelona",
+      "addressCountry": "ES"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+34-659-879-844",
+      "email": "info@planoinvisible.com",
+      "contactType": "customer service",
+      "availableLanguage": ["Spanish"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/planoinvisible",
+      "https://www.instagram.com/plano_invisible/"
+    ],
+    "foundingDate": "2019",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Laura Alconero de Rioja",
+        "jobTitle": "CEO & Co-founder"
+      },
+      {
+        "@type": "Person",
+        "name": "Pau Bronsoms Masferrer",
+        "jobTitle": "CTO & Co-founder"
+      }
+    ]
+  }
+  </script>
+  {% if schemaType == 'service' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "{{ schemaServiceName }}",
+    "description": "{{ description }}",
+    "provider": {
+      "@type": "Organization",
+      "name": "Plano Invisible"
+    },
+    "areaServed": ["ES", "MX", "AR", "CO", "CL"],
+    "serviceType": "{{ schemaServiceType or 'Neuroarquitectura' }}"
+  }
+  </script>
+  {% endif %}
+
   <!-- Consent Mode v2: Default denied BEFORE any tags load -->
   <script>
     window.dataLayer = window.dataLayer || [];
