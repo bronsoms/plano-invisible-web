@@ -1073,6 +1073,129 @@ section {
   margin-bottom: 0;
 }
 
+/* ---- Cookie Consent Banner ---- */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #fff;
+  box-shadow: 0 -2px 16px rgba(0,0,0,0.12);
+  border-top: 1px solid #eee;
+}
+
+.cookie-banner__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cookie-banner__text {
+  flex: 1;
+  font-size: 0.85rem;
+  color: var(--dark);
+  line-height: 1.5;
+  margin: 0;
+  min-width: 200px;
+}
+
+.cookie-banner__buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-btn);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--dark);
+  transition: all 0.2s;
+}
+
+.cookie-btn--accept {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.cookie-btn--accept:hover {
+  background: var(--accent-hover);
+}
+
+.cookie-btn--reject {
+  background: transparent;
+  color: var(--dark);
+}
+
+.cookie-btn--reject:hover {
+  background: #f0f0f0;
+}
+
+.cookie-btn--config {
+  background: transparent;
+  color: var(--dark);
+}
+
+.cookie-btn--config:hover {
+  background: #f0f0f0;
+}
+
+.cookie-config__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 1.2rem;
+  border-top: 1px solid #eee;
+}
+
+.cookie-config__inner h6 {
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.cookie-config__option {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.cookie-config__option label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.cookie-config__option input[type="checkbox"] {
+  margin-top: 3px;
+}
+
+.cookie-config__buttons {
+  margin-top: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .cookie-banner__inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+  .cookie-banner__buttons {
+    justify-content: stretch;
+  }
+  .cookie-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
+
 /* ---- Footer ---- */
 footer {
   background: var(--dark);

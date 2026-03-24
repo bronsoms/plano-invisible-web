@@ -35,11 +35,35 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CEDH8WJ3RX"></script>
+  <!-- Consent Mode v2: Default denied BEFORE any tags load -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+
+    // Check if user already gave consent
+    (function() {
+      var consent = localStorage.getItem('cookie_consent');
+      if (consent === 'accepted') {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted',
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted'
+        });
+      }
+    })();
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CEDH8WJ3RX"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-CEDH8WJ3RX');
   </script>
@@ -59,6 +83,106 @@
   <!-- End Google Tag Manager (noscript) -->
 
 {{ content | safe }}
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" class="cookie-banner" style="display:none;">
+    <div class="cookie-banner__inner">
+      <p class="cookie-banner__text">Utilizamos cookies propias y de terceros para analizar el uso del sitio web y mejorar nuestros servicios. Puedes aceptar, rechazar o configurar tus preferencias.</p>
+      <div class="cookie-banner__buttons">
+        <button id="cookieReject" class="cookie-btn cookie-btn--reject">Rechazar</button>
+        <button id="cookieConfig" class="cookie-btn cookie-btn--config">Configurar</button>
+        <button id="cookieAccept" class="cookie-btn cookie-btn--accept">Aceptar</button>
+      </div>
+    </div>
+    <!-- Config panel -->
+    <div id="cookieConfigPanel" class="cookie-config" style="display:none;">
+      <div class="cookie-config__inner">
+        <h6>Configurar cookies</h6>
+        <div class="cookie-config__option">
+          <label><input type="checkbox" checked disabled> <strong>Necesarias</strong> — Imprescindibles para el funcionamiento del sitio.</label>
+        </div>
+        <div class="cookie-config__option">
+          <label><input type="checkbox" id="cookieAnalytics"> <strong>Analíticas</strong> — Nos ayudan a entender cómo usas el sitio (Google Analytics).</label>
+        </div>
+        <div class="cookie-config__option">
+          <label><input type="checkbox" id="cookieAds"> <strong>Marketing</strong> — Permiten medir conversiones y personalizar anuncios (Google Ads).</label>
+        </div>
+        <div class="cookie-config__buttons">
+          <button id="cookieSaveConfig" class="cookie-btn cookie-btn--accept">Guardar preferencias</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    var banner = document.getElementById('cookieBanner');
+    var configPanel = document.getElementById('cookieConfigPanel');
+    var consent = localStorage.getItem('cookie_consent');
+
+    // Show banner if no consent stored
+    if (!consent) {
+      banner.style.display = 'block';
+    }
+
+    // Accept all
+    document.getElementById('cookieAccept').addEventListener('click', function() {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+      });
+      localStorage.setItem('cookie_consent', 'accepted');
+      banner.style.display = 'none';
+    });
+
+    // Reject all
+    document.getElementById('cookieReject').addEventListener('click', function() {
+      gtag('consent', 'update', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+      localStorage.setItem('cookie_consent', 'rejected');
+      banner.style.display = 'none';
+    });
+
+    // Show config panel
+    document.getElementById('cookieConfig').addEventListener('click', function() {
+      configPanel.style.display = configPanel.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // Save custom config
+    document.getElementById('cookieSaveConfig').addEventListener('click', function() {
+      var analytics = document.getElementById('cookieAnalytics').checked ? 'granted' : 'denied';
+      var ads = document.getElementById('cookieAds').checked ? 'granted' : 'denied';
+      gtag('consent', 'update', {
+        'analytics_storage': analytics,
+        'ad_storage': ads,
+        'ad_user_data': ads,
+        'ad_personalization': ads
+      });
+      localStorage.setItem('cookie_consent', 'custom');
+      localStorage.setItem('cookie_analytics', analytics);
+      localStorage.setItem('cookie_ads', ads);
+      banner.style.display = 'none';
+    });
+
+    // Restore custom config on load
+    if (consent === 'custom') {
+      var savedAnalytics = localStorage.getItem('cookie_analytics') || 'denied';
+      var savedAds = localStorage.getItem('cookie_ads') || 'denied';
+      gtag('consent', 'update', {
+        'analytics_storage': savedAnalytics,
+        'ad_storage': savedAds,
+        'ad_user_data': savedAds,
+        'ad_personalization': savedAds
+      });
+    }
+  })();
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   {% if includeMainJs %}<script src="/main.js"></script>{% endif %}
