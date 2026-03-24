@@ -27,26 +27,27 @@ permalink: /contacto.html
     <div class="container">
       <div class="row g-5">
         <div class="col-lg-7 fade-up">
-          <form id="contactForm" class="contact-form" action="#" method="POST">
+          <form id="contactForm" class="contact-form" method="POST">
+            <input type="hidden" name="formID" value="260822191837359">
             <div class="mb-3">
               <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" required>
+              <input type="text" class="form-control" id="nombre" name="q1_nombre" required>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="email" required>
+              <input type="email" class="form-control" id="email" name="q2_email" required>
             </div>
             <div class="mb-3">
               <label for="tipo" class="form-label">Soy...</label>
-              <select class="form-select" id="tipo" name="tipo" required>
+              <select class="form-select" id="tipo" name="q3_soy" required>
                 <option value="" disabled selected>Selecciona una opción</option>
-                <option value="particular">Particular</option>
-                <option value="profesional">Profesional / Arquitecto</option>
+                <option value="Particular">Particular</option>
+                <option value="Profesional / Arquitecto">Profesional / Arquitecto</option>
               </select>
             </div>
             <div class="mb-3">
               <label for="mensaje" class="form-label">Mensaje</label>
-              <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
+              <textarea class="form-control" id="mensaje" name="q4_mensaje" rows="5" required></textarea>
             </div>
             <button type="submit" class="btn btn-accent btn-lg w-100">Enviar mensaje</button>
           </form>

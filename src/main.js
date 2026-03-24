@@ -71,25 +71,40 @@
     });
   }
 
-  // ---- Contact form ----
+  // ---- Contact form (JotForm) ----
   var form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', function (e) {
-      var action = form.getAttribute('action');
-      // If no backend URL configured, use mailto fallback
-      if (!action || action === '#') {
-        e.preventDefault();
-        var nombre = form.querySelector('[name="nombre"]').value;
-        var email = form.querySelector('[name="email"]').value;
-        var tipo = form.querySelector('[name="tipo"]').value;
-        var mensaje = form.querySelector('[name="mensaje"]').value;
-        var subject = encodeURIComponent('Contacto web – ' + tipo);
-        var body = encodeURIComponent(
-          'Nombre: ' + nombre + '\nEmail: ' + email + '\nTipo: ' + tipo + '\n\n' + mensaje
-        );
-        window.location.href = 'mailto:info@planoinvisible.com?subject=' + subject + '&body=' + body;
-      }
-      // If action is a real URL (e.g. Google Apps Script), let the form submit normally
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var btnText = btn.textContent;
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      var formData = new FormData(form);
+
+      fetch('https://submit.jotform.com/submit/260822191837359', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      }).then(function () {
+        form.reset();
+        btn.textContent = '¡Mensaje enviado!';
+        btn.classList.remove('btn-accent');
+        btn.classList.add('btn-success');
+        setTimeout(function () {
+          btn.textContent = btnText;
+          btn.disabled = false;
+          btn.classList.remove('btn-success');
+          btn.classList.add('btn-accent');
+        }, 3000);
+      }).catch(function () {
+        btn.textContent = 'Error, inténtalo de nuevo';
+        btn.disabled = false;
+        setTimeout(function () {
+          btn.textContent = btnText;
+        }, 3000);
+      });
     });
   }
 })();
