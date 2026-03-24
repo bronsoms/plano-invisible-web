@@ -1,0 +1,43 @@
+# Plano Invisible
+
+> Plataforma digital que combina arquitectura, psicología y neurociencia para ahondar en los deseos y necesidades del hogar.
+
+## Sobre nosotros
+
+Plano Invisible nace de la práctica profesional real. Sabemos que lo esencial antes de diseñar tu casa es conocer tu forma de ser y de estar. Por eso hemos creado una metodología basada en neurociencia y psicología que guía a las personas en un proceso de autodescubrimiento antes de tomar decisiones sobre su vivienda.
+
+## Servicios
+
+### Para Particulares
+Estudio de neuroarquitectura personalizado para viviendas. A través de ejercicios experienciales (maquetas, traslados virtuales, juegos de palabras, dibujos), observamos tu comportamiento espacial y te ayudamos a destilar qué debería tener tu vivienda para que la sientas tu hogar. Se entrega un informe detallado con las claves para saber qué debe tener tu casa.
+
+### Para Profesionales
+Plataforma de briefing en profundidad para arquitectos e interioristas. Sistematiza el descubrimiento profundo del cliente antes del diseño arquitectónico. Combina arquitectura, psicología y neurociencia aplicada a la personalización de la vivienda.
+
+## Tres Pilares
+
+- **Arquitectura e interiorismo**: Detectar aquellos puntos donde hace falta preguntar de otra forma y trabajar con insights clave y accionables para el diseño del hogar.
+- **Psicología y neurociencia**: Preguntar a través de ejercicios experienciales nos permite obtener información más profunda, menos sesgada y más auténtica.
+- **Tecnología e IA**: Convertir la psicología del habitar en una experiencia digital gamificada usando IA para descubrir las necesidades reales del usuario.
+
+## Equipo
+
+- **Laura Alconero de Rioja** — CEO & Co-founder. Arquitecta especializada en neuroarquitectura.
+- **Pau Bronsoms Masferrer** — CTO & Co-founder. Ingeniero informático con más de 16 años de experiencia en desarrollo tecnológico e IA.
+
+## Contacto
+
+- Web: https://planoinvisible.com
+- Email: info@planoinvisible.com
+- Teléfono: +34 659 879 844
+- Ubicación: Barcelona, España
+- LinkedIn: https://www.linkedin.com/company/planoinvisible
+- Instagram: https://www.instagram.com/plano_invisible/
+
+## Páginas
+
+- [Inicio](https://planoinvisible.com/)
+- [Particulares](https://planoinvisible.com/particulares.html)
+- [Profesionales](https://planoinvisible.com/profesionales.html)
+- [Nosotros](https://planoinvisible.com/nosotros.html)
+- [Contacto](https://planoinvisible.com/contacto.html)
