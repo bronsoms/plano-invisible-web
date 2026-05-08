@@ -10,8 +10,14 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
+        {# Hide the cross-profile link once the visitor has entered a profile,
+           so a Particular doesn't switch to the Profesional flow and vice versa. #}
+        {% if activePage != 'profesionales' %}
         <li class="nav-item"><a class="nav-link {% if activePage == 'particulares' %}active{% endif %}" href="/particulares.html">Particulares</a></li>
+        {% endif %}
+        {% if activePage != 'particulares' %}
         <li class="nav-item"><a class="nav-link {% if activePage == 'profesionales' %}active{% endif %}" href="/profesionales.html">Profesionales</a></li>
+        {% endif %}
         <li class="nav-item"><a class="nav-link {% if activePage == 'nosotros' %}active{% endif %}" href="/nosotros.html">Nosotros</a></li>
         <li class="nav-item"><a class="nav-link {% if activePage == 'contacto' %}active{% endif %}" href="/contacto.html">Contacto</a></li>
         <li class="nav-item ms-lg-2"><a class="nav-link" href="https://app.planoinvisible.com" target="_blank">Login</a></li>

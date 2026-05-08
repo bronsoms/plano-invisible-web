@@ -9,8 +9,8 @@
       <div class="col-lg-2 col-md-4">
         <h6 class="footer-heading">Plano Invisible</h6>
         <ul class="footer-links">
-          <li><a href="/particulares.html">Particulares</a></li>
-          <li><a href="/profesionales.html">Profesionales</a></li>
+          {% if activePage != 'profesionales' %}<li><a href="/particulares.html">Particulares</a></li>{% endif %}
+          {% if activePage != 'particulares' %}<li><a href="/profesionales.html">Profesionales</a></li>{% endif %}
           <li><a href="/nosotros.html">Nosotros</a></li>
           <li><a href="/contacto.html">Contacto</a></li>
         </ul>
