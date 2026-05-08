@@ -3,6 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {# Profile gating — runs before the body parses so the cross-profile link
+     is hidden via CSS before the browser paints the navbar/footer. #}
+  <script>
+    (function () {
+      try {
+        var path = window.location.pathname;
+        if (path === '/' || path === '/index.html') return;
+        var p = localStorage.getItem('planoProfile');
+        if (p === 'particulares' || p === 'profesionales') {
+          document.documentElement.setAttribute('data-active-profile', p);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    html[data-active-profile="particulares"] a[href="/profesionales.html"],
+    html[data-active-profile="profesionales"] a[href="/particulares.html"] {
+      display: none !important;
+    }
+    /* Also hide the parent <li> when the link sits inside one (navbar/footer markup). */
+    html[data-active-profile="particulares"] li:has(> a[href="/profesionales.html"]),
+    html[data-active-profile="profesionales"] li:has(> a[href="/particulares.html"]) {
+      display: none !important;
+    }
+  </style>
   <meta name="description" content="{{ description }}">
   {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
   <meta name="author" content="Plano Invisible">
@@ -253,5 +279,28 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   {% if includeMainJs %}<script src="/main.js"></script>{% endif %}
+
+  {# Profile gating — write side.
+     The CSS in <head> already hides the cross-profile link before paint
+     when localStorage.planoProfile is set. Here we only handle the two
+     write operations: reset on entering the home, and set on clicking
+     a CTA on the home. #}
+  <script>
+    (function () {
+      var KEY = 'planoProfile';
+      try {
+        var path = window.location.pathname;
+        var isHome = path === '/' || path === '/index.html';
+        if (!isHome) return;
+        try { localStorage.removeItem(KEY); } catch (e) {}
+        var ctas = document.querySelectorAll('[data-profile]');
+        for (var i = 0; i < ctas.length; i++) {
+          ctas[i].addEventListener('click', function (ev) {
+            try { localStorage.setItem(KEY, ev.currentTarget.getAttribute('data-profile')); } catch (e) {}
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
 </body>
 </html>
