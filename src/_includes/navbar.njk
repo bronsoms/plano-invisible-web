@@ -18,7 +18,9 @@
         {% if activePage != 'particulares' %}
         <li class="nav-item"><a class="nav-link {% if activePage == 'profesionales' %}active{% endif %}" href="/profesionales.html">Profesionales</a></li>
         {% endif %}
+        {# Nosotros is hidden: the page is unpublished, so nothing links to it.
         <li class="nav-item"><a class="nav-link {% if activePage == 'nosotros' %}active{% endif %}" href="/nosotros.html">Nosotros</a></li>
+        #}
         <li class="nav-item"><a class="nav-link {% if activePage == 'contacto' %}active{% endif %}" href="/contacto.html">Contacto</a></li>
         <li class="nav-item ms-lg-2"><a class="nav-link" href="https://app.planoinvisible.com" target="_blank">Login</a></li>
         <li class="nav-item ms-lg-2"><a class="btn btn-accent btn-sm nav-cta" href="/contacto.html">Hablemos</a></li>

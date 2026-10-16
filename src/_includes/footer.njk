@@ -11,7 +11,8 @@
         <ul class="footer-links">
           {% if activePage != 'profesionales' %}<li><a href="/particulares.html">Particulares</a></li>{% endif %}
           {% if activePage != 'particulares' %}<li><a href="/profesionales.html">Profesionales</a></li>{% endif %}
-          <li><a href="/nosotros.html">Nosotros</a></li>
+          {# Nosotros is hidden: the page is unpublished, so nothing links to it.
+          <li><a href="/nosotros.html">Nosotros</a></li> #}
           <li><a href="/contacto.html">Contacto</a></li>
         </ul>
       </div>

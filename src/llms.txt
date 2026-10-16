@@ -39,5 +39,4 @@ Plataforma de briefing en profundidad para arquitectos e interioristas. Sistemat
 - [Inicio](https://planoinvisible.com/)
 - [Particulares](https://planoinvisible.com/particulares.html)
 - [Profesionales](https://planoinvisible.com/profesionales.html)
-- [Nosotros](https://planoinvisible.com/nosotros.html)
 - [Contacto](https://planoinvisible.com/contacto.html)
